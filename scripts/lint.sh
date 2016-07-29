@@ -14,5 +14,6 @@ test -x ./node_modules/.bin/uglifyjs || npm install
 
 set -uex
 ./node_modules/.bin/uglifyjs public/bootlint/$version/bootlint.js \
-  -o public/bootlint/$version/bootlint.min.js --compress --mangle --support-ie8 \
- --comments "/(?:^!|@(?:license|preserve|cc_on))/"
+  -o public/bootlint/$version/bootlint.min.js --compress --mangle \
+  --support-ie8  --source-map bootlint.min.js.map \
+  --comments "/(?:^!|@(?:license|preserve|cc_on))/"
