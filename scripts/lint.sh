@@ -14,4 +14,5 @@ test -x ./node_modules/.bin/uglifyjs || npm install
 
 set -uex
 ./node_modules/.bin/uglifyjs public/bootlint/$version/bootlint.js \
-  -o public/bootlint/$version/bootlint.min.js --comments all
+  -o public/bootlint/$version/bootlint.min.js --compress --mangle \
+ --comments "/(?:^!|@(?:license|preserve|cc_on))/"
